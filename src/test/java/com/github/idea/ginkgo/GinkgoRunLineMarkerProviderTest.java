@@ -115,7 +115,7 @@ public class GinkgoRunLineMarkerProviderTest extends BasePlatformTestCase {
         RunLineMarkerContributor.Info info = ginkgoRunLineMarkerProvider.getInfo(getSpecElement(file, spec));
         assertNotNull(info);
         assertEquals(AllIcons.RunConfigurations.TestState.Run, info.icon);
-        assertEquals(7, info.actions.length);
+        assertEquals(8, info.actions.length);
     }
 
     private void verifyEnableTestMarker(GoFile file, String spec) {
@@ -141,7 +141,7 @@ public class GinkgoRunLineMarkerProviderTest extends BasePlatformTestCase {
     private @NotNull PsiElement getSpecElement(GoFile file, String specType, int index) {
         List<LeafPsiElement> leafElements = PsiTreeUtil.findChildrenOfType(file, LeafPsiElement.class).stream()
                 .filter(e -> specType.equals(e.getText()))
-                .collect(Collectors.toList());
+                .toList();
 
         if (leafElements.size() < index) {
             throw new AssertionFailedError(String.format("Not found: %s index %s", specType, index));

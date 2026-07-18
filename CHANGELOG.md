@@ -4,6 +4,10 @@
 
 ## [Unreleased]
 
+### Chore
+
+- Add support for 2026.2
+
 ## [0.10.10] - 2026-04-05
 
 ### Chore
